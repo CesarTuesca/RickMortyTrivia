@@ -4,38 +4,54 @@
         <div class="background-container">
             <img src="@/assets/landingBackground.svg" alt="Background Image" />
         </div>
-        <section class="forms">
 
-            <form class="register" @submit.prevent="register">
-                <h2>Register</h2>
-                <input 
+        <div class="titles-container">
+            <div class="top-title">
+                <img src="@/assets/gameTitle.svg" alt="Top Title" />
+            </div>
+                <section class="forms">
+            
+            
+
+                    <form class="register" @submit.prevent="register">
+                        <h2 class="customForm-text">Register</h2>
+                        <input 
                     type="email" 
                     placeholder="Email address"
                     v-model="register_form.email" />
-                <input 
+                        <input 
                     type="password" 
                     placeholder="Password"
                     v-model="register_form.password" />
-                <input
+                        <input
                     type="submit"
                     value="Register" />
-            </form>
+                    </form>
 
-            <form class="login" @submit.prevent="login">
-                <h2>Login</h2>
-                <input 
+                    <form class="login" @submit.prevent="login">
+                        <h2 class="customForm-text">Login</h2>
+                        <input 
                     type="email" 
                     placeholder="Email address"
                     v-model="login_form.email" />
-                <input 
+                        <input 
                     type="password" 
                     placeholder="Password"
                     v-model="login_form.password" />
-                <input
+                        <input
                     type="submit"
                     value="Login" />
-            </form>
-        </section>
+                    </form>
+
+            
+                </section>
+        
+            <div class="bottom-title">
+                <img src="@/assets/bottomGameTitle.svg" alt="Bottom Title" />
+            </div>
+        </div>
+
+        
     </main>
 </template>
 
@@ -68,6 +84,13 @@ export default {
 </script>
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+.customForm-text {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 2rem;
+}
 .background-container{
     background-image: url('@/assets/landingBackground.svg');
     background-size: cover;
@@ -80,28 +103,58 @@ export default {
     height: 100%;
     z-index: -1;
 }
+
+.titles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.top-title {
+    background-image: url('@/assets/gameTitle.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 181px;
+    width: 510px;
+}
+
+.bottom-title {
+    background-image: url('@/assets/bottomGameTitle.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 128px;
+    width: 387px;
+}
 .forms {
     display: flex;
-    min-height: 100vh;
+    flex-flow: row wrap;
+    min-height: 50vh;
     background: transparent;
 
 }
 
 form {
     flex: 1 1 0%;
-    padding: 8rem 1rem 1rem;
+    padding: 5rem 1rem 1rem;
 }
 
 form.register {
     color: #FFF;
     background-color: transparent;
-    
+    margin-right: 5rem;
+}
+form.login {
+    color: #FFF;
+    background-color: transparent;
+    margin-left: 5rem;
 }
 
 h2 {
     font-size: 2rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
+    font-family: 'Lacquer', sans-serif;
 }
 
 input {
@@ -144,10 +197,10 @@ form.login input:not([type="submit"]) {
 
 form.login input[type="submit"] {
     background: url('@/assets/loginButton.svg') no-repeat center center;
-    background-size: cover;
+    background-size: contain;
     color: transparent;
-    width:  100%;
-    height: 100%;
+    width:  296px;
+    height: 213px;
     border: none;
     cursor: pointer;
     margin-top: 1rem;
@@ -155,10 +208,10 @@ form.login input[type="submit"] {
 
 form.register input[type="submit"] {
     background: url('@/assets/registerButton.svg') no-repeat center center;
-    background-size: cover;
+    background-size: contain;
     color: transparent;
-    width:  100%;
-    height: 100%;
+    width:  296px;
+    height: 213px;
     border: none;
     cursor: pointer;
     margin-top: 1rem;
