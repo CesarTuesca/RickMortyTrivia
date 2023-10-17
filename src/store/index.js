@@ -4,11 +4,24 @@ import { auth } from '../firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth'
 export default createStore({
   state: {
-    user: null
+    user: null,
+    currentQuestion: {},
+    selectedAnswer: null,
+    score: 0
   },
   getters: {
   },
   mutations: {
+
+    setCurrentQuestion(state, question) {
+      state.currentQuestion = question;
+    },
+    setSelectedAnswer(state, answer) {
+      state.selectedAnswer = answer;
+    },
+    incrementScore(state) {
+      state.score++;
+    },
     SET_USER (state, user) {
       state.user = user
     },
@@ -17,6 +30,7 @@ export default createStore({
       state.user = null
     }
 
+    //Are wq still using this or are we importing the config from Group 1?
   },
   actions: {
     async login ({ commit }, details) {
