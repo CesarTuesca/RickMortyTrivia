@@ -14,14 +14,14 @@
             
 
                     <form class="register" @submit.prevent="register">
-                        <h2 class="customForm-text">Register</h2>
+                        <h2 class="customForm-textLarge">Register</h2>
                         <input 
                     type="email" 
-                    placeholder="Email address"
+                    class="customForm-textSmall" placeholder="Email"
                     v-model="register_form.email" />
                         <input 
                     type="password" 
-                    placeholder="Password"
+                    class="customForm-textSmall" placeholder="Password"
                     v-model="register_form.password" />
                         <input
                     type="submit"
@@ -29,14 +29,14 @@
                     </form>
 
                     <form class="login" @submit.prevent="login">
-                        <h2 class="customForm-text">Login</h2>
+                        <h2 class="customForm-textLarge">Login</h2>
                         <input 
                     type="email" 
-                    placeholder="Email address"
+                    class="customForm-textSmall" placeholder="Email"
                     v-model="login_form.email" />
                         <input 
                     type="password" 
-                    placeholder="Password"
+                    class="customForm-textSmall" placeholder="Password"
                     v-model="login_form.password" />
                         <input
                     type="submit"
@@ -87,11 +87,15 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
-.customForm-text {
+.customForm-textLarge {
     font-family: 'Nanum Pen Script', cursive;
-    font-size: 2rem;
+    font-size: 4rem;
 }
-.background-container{
+.customForm-textSmall {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.5rem;
+}
+.background-container {
     background-image: url('@/assets/landingBackground.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -111,6 +115,7 @@ export default {
     justify-content: center;
     min-height: 100vh;
 }
+
 .top-title {
     background-image: url('@/assets/gameTitle.svg');
     background-size: cover;
@@ -126,12 +131,12 @@ export default {
     height: 128px;
     width: 387px;
 }
+
 .forms {
     display: flex;
     flex-flow: row wrap;
     min-height: 50vh;
     background: transparent;
-
 }
 
 form {
@@ -144,6 +149,7 @@ form.register {
     background-color: transparent;
     margin-right: 5rem;
 }
+
 form.login {
     color: #FFF;
     background-color: transparent;
@@ -151,10 +157,12 @@ form.login {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 4rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
     font-family: 'Lacquer', sans-serif;
+    color: rgb(191, 222, 66);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
 
 input {
@@ -162,37 +170,41 @@ input {
     border: none;
     outline: none;
     background: none;
-
     display: block;
     width: 100%;
     max-width: 400px;
-    margin: 0 auto; 
+    margin: 0 auto;
     font-size: 1.5rem;
     margin-bottom: 2rem;
     padding: 0.5rem 0rem;
+    position: relative; 
 }
+
 
 input:not([type="submit"]) {
-    opacity: 0.8;
-    transition: 0.4s;
-}
-
-input:focus:not([type="submit"]) {
-    opacity: 1;
+    border-radius: 5px;
+    background: rgb(62, 62, 62);
+    background: linear-gradient(180deg, rgba(62, 62, 62, 1) 0%, rgba(98, 98, 98, 1) 0%, rgba(56, 56, 56, 1) 0%, rgba(69, 69, 69, 1) 7%, rgba(47, 47, 47, 1) 100%);
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(89, 89, 89, 0.4);
+    
 }
 
 input::placeholder {
     color: inherit;
+    padding-left: 10px;
+
 }
 
 form.register input:not([type="submit"]) {
-    color: #FFF;
-    border-bottom: 2px solid #FFF;
+    color: rgb(65, 180, 201);
+    padding-left: 10px;
 }
 
 form.login input:not([type="submit"]) {
-    color: #2c3e50;
-    border-bottom: 2px solid #2c3e50;
+    color: rgb(65, 180, 201);
+    padding-left: 10px;
 }
 
 form.login input[type="submit"] {

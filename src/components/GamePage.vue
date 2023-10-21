@@ -3,8 +3,8 @@
         <BackArrow />
         <button @click="goBack" class="back-button">← Back</button>
         <div class="question-box">
-            <p>{{ currentQuestion.text }}</p>
-            <ul>
+            <p class="customForm-textLarge">{{ currentQuestion.text }}</p>
+            <ul class="customForm-textSmall">
                 <li v-for="(answer, index) in currentQuestion.answers" :key="index" class="answer-item">
                     <span class="answer-prefix">{{ answer.split(' ')[0] }}</span>
                     <input type="radio" :value="answer" v-model="selectedAnswer" :id="'answer-' + index">
@@ -14,7 +14,7 @@
             </ul>
         </div>
 
-        <button @click="submitAnswer" class="submit-button">Submit</button>
+        <button @click="submitAnswer" class="submit-button"></button>
     </div>
 </template>
   
@@ -58,10 +58,20 @@ export default {
 </script>
   
 <style scoped>
+.customForm-textLarge {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 3rem;
+    color: rgb(191, 222, 66);
+}
+.customForm-textSmall {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.5rem;
+    color: rgb(191, 222, 66);
+}
 .game-container {
     width: 100vw;
     height: 100vh;
-    background-image: url('../assets/landingBackground.svg');
+    background-image: url('../assets/gameBackground_1.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -73,28 +83,16 @@ export default {
 }
 
 .back-button,
-.submit-button {
-    font-size: 18px;
-    /* Increase font size for better readability */
-    color: white;
-    /* Use white text for contrast */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* A semi-transparent black background */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    /* Rounded corners */
-    transition: background-color 0.4s;
-    /* Smooth transition for hover effect */
-}
 
 .back-button:hover,
 .submit-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
     /* Slightly darker on hover */
 }
 
 .back-button {
+    
     position: absolute;
     top: 10px;
     left: 10px;
@@ -122,15 +120,18 @@ export default {
 
 
 .question-box {
-    background-color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(180deg, rgba(62, 62, 62, 1) 0%, rgba(98, 98, 98, 1) 0%, rgba(56, 56, 56, 1) 0%, rgba(69, 69, 69, 1) 7%, rgba(47, 47, 47, 1) 100%);
     /* White background to improve text readability */
-    border: 1px solid #ccc;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(89, 89, 89, 0.4);
+    border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
     text-align: left;
     border-radius: 5px;
     /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     /* A subtle shadow to lift the box off the background */
     max-width: 80%;
 }
@@ -141,14 +142,15 @@ export default {
 }
 
 .question-box p {
-    font-size: 20px;
     font-weight: bold;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     /* Make the question stand out */
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .question-box ul {
     list-style-type: none;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     padding: 0;
 }
 
@@ -168,8 +170,13 @@ export default {
 }
 
 .submit-button {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: url('@/assets/submitButton.svg') no-repeat center center;
+    background-size: contain;
+    color: transparent;
+    width:  150px;
+    height: 50.7194px;
+    border: none;
     cursor: pointer;
+    margin-top: .1rem;
 }
 </style>
-  

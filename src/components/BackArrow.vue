@@ -16,15 +16,23 @@ export default {
 
 <style scoped>
 .back-arrow {
-  background-color: transparent;
+  background: url('@/assets/arrow.svg') no-repeat center center;
+  background-size: contain;
+  color: transparent;
+  width: 93px;
+  height: 53px;
   border: none;
-  font-size: 24px; 
   cursor: pointer;
-  color: #555; 
   margin: 10px; 
+
 }
 
 .back-arrow:hover {
-  color: #000; 
+  background: url('@/assets/arrowshadow.svg') no-repeat center center;
+  color: transparent; 
+  width: 105px;
+  height: 59px;
+  border: none;
+  
 }
 </style>

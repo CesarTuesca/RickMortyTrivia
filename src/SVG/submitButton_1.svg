@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 139.12 47.71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+        stroke: #5a7936;
+        stroke-width: 3px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #254c5b;
+        filter: url(#drop-shadow-1);
+        font-family: GetSchwifty-Regular, 'Get Schwifty';
+        font-size: 28px;
+        stroke: #3ea8bc;
+        stroke-width: .5px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="69.56" y1="1.5" x2="69.56" y2="45.47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bfd747"/>
+      <stop offset=".28" stop-color="#bcd446"/>
+      <stop offset=".47" stop-color="#b3cc45"/>
+      <stop offset=".63" stop-color="#a4be42"/>
+      <stop offset=".77" stop-color="#8faa3e"/>
+      <stop offset=".9" stop-color="#73903a"/>
+      <stop offset="1" stop-color="#5a7936"/>
+    </linearGradient>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="1"/>
+      <feGaussianBlur result="blur" stdDeviation="1"/>
+      <feFlood flood-color="#231f20" flood-opacity=".65"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <rect class="cls-1" x="1.5" y="1.5" width="136.12" height="43.97" rx="10" ry="10"/>
+    <text class="cls-2" transform="translate(25.55 31.5)"><tspan x="0" y="0">Submit</tspan></text>
+  </g>
+</svg>
