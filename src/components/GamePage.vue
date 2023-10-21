@@ -173,8 +173,8 @@ export default {
     background: url('@/assets/submitButton.svg') no-repeat center center;
     background-size: contain;
     color: transparent;
-    width:  150px;
-    height: 50.7194px;
+    width:  199px;
+    height: 53.7194px;
     border: none;
     cursor: pointer;
     margin-top: .1rem;
