@@ -46,8 +46,8 @@ export default createStore({
           case 'auth/wrong-password':
             alert("Wrong password")
             break
-          default:
-            alert("Something went wrong")
+          //default:
+           // alert("Something went wrong")
         }
 
         return
@@ -77,8 +77,8 @@ export default createStore({
           case 'auth/weak-password':
             alert("Weak password")
             break
-          default:
-            alert("Something went wrong")
+          //default:
+            //alert("Something went wrong")
         }
 
         return

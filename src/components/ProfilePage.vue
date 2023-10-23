@@ -19,7 +19,7 @@
     <div class="content">
       
       <div class="welcome-message">
-        <!-- Your welcome message content -->
+
       </div>
       <div>
       </div>

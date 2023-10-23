@@ -56,21 +56,25 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-import { useStore } from 'vuex'
+import { ref } from 'vue';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
 export default {
     setup() {
         const login_form = ref({});
         const register_form = ref({});
         const store = useStore();
+        const router = useRouter();
 
         const login = () => {
             store.dispatch('login', login_form.value);
+            router.push('/profile');
         }
 
         const register = () => {
             store.dispatch('register', register_form.value);
+            router.push('/profile');
         }
 
         return {
@@ -82,6 +86,7 @@ export default {
     }
 }
 </script>
+
 
 <style scoped>
 

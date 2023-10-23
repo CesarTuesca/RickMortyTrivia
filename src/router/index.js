@@ -5,6 +5,10 @@ import Login from '@/components/Login';
 
 const routes = [
   {
+    path: '/',
+    redirect: '/login'
+},
+  {
     path: '/profile',
     name: 'ProfilePage',
     component: ProfilePage
