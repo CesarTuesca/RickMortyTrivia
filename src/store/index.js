@@ -30,7 +30,7 @@ export default createStore({
       state.user = null
     }
 
-    //Are wq still using this or are we importing the config from Group 1?
+    //Are we still using this or are we importing the config from Group 1?
   },
   actions: {
     async login ({ commit }, details) {
