@@ -1,17 +1,16 @@
 <template>
-  <main class="profile">
-    <div class="userContent">
+    <main class="profile">
+      <div class="userContent">
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="@/assets/userAvatar.svg" alt="Avatar" />
+          </div>
 
-      <div class="user-info">
-        
-        <div class="user-avatar">
-          <img src="@/assets/userAvatar.svg" alt="Avatar" />
-        </div>
-        <div class="user-text">
-          <h2 class="customForm-textLarge">Username</h2>
-          <p class="customForm-textSmall">Total Games Played: 10</p>
-          <p class="customForm-textSmall">Highest Score: 1000</p>
-          <button @click="startGame" class="start-button"></button>
+          <div class="user-text">
+            <h2 class="customForm-textLarge">Username</h2>
+            <p class="customForm-textSmall">Total Games Played: {{ gamesPlayed }}</p>
+            <p class="customForm-textSmall">Last Game Score: {{ lastGameScore }}</p>
+            <button @click="startGame" class="start-button"></button>
         </div>
       </div>
     </div>
@@ -30,6 +29,12 @@
 <script>
 export default {
   name: 'ProfilePage',
+  data() {
+    return {
+      gamesPlayed: localStorage.getItem('gamesPlayed') || 0,
+      lastGameScore: localStorage.getItem('lastGameScore') || 0
+    };
+  },
   methods: {
     startGame() {
       const userConfirmed = confirm("Are you sure you want to start the game?")
@@ -127,7 +132,7 @@ export default {
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: left; /* This moves the content to the left */
+  justify-content: left; 
   width: 100%;
   height: 100%;
 }
@@ -137,7 +142,7 @@ export default {
   width: 534px;
   height: 286px;
   margin-top: 50%;
-  margin-left: 2%; /* Adjust the margin to move it slightly to the left of center */
+  margin-left: 2%; 
   position: fixed;
 }
 
